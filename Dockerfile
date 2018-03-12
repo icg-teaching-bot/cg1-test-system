@@ -12,9 +12,8 @@ RUN add-apt-repository ppa:ubuntu-toolchain-r/test && apt-get update && apt-get 
     imagemagick \
     ghostscript \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-  && wget https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh
-  && sh cmake-3.10.2-Linux-x86_64.sh
+  && rm -rf /var/lib/apt/lists/* \
+  && wget https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh \
+  && sh cmake-3.10.2-Linux-x86_64.sh \
   && rm cmake-3.10.2-Linux-x86_64.sh
-  
-  
+
