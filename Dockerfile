@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install --yes --no-install-recommends software-pro
 RUN add-apt-repository ppa:ubuntu-toolchain-r/test && apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc-7 g++-7 \
+    ninja-build \
     xorg-dev \
     libgl1-mesa-dev \
     xvfb \
