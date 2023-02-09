@@ -1,4 +1,5 @@
 FROM ubuntu:22.04
+MAINTAINER Michael Kenzel <michael.kenzel@icg.tugraz.at>
 
 RUN apt-get update 
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
