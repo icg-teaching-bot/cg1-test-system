@@ -1,15 +1,12 @@
-FROM buildpack-deps:bionic
+FROM ubuntu:22.04
 MAINTAINER Michael Kenzel <michael.kenzel@icg.tugraz.at>
 
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt-get update && apt-get install --yes --no-install-recommends software-properties-common
-RUN add-apt-repository ppa:ubuntu-toolchain-r/test && apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc-8 g++-8 \
+RUN apt-get update 
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends \
     cmake \
+    build-essential \
+    gcc g++ \
     ninja-build \
     imagemagick \
-    ghostscript \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
